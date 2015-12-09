@@ -1,0 +1,6 @@
+<form>
+  <label for="messageToSend">Message</label>
+  {{input value=message class="u-full-width" placeholder="content" id="messageToSend"}}
+
+  <button class="button-primary" {{action "sendMessage"}}>Send</button>
+</form>
