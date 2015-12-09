@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Login</h1>
+
+  <form {{action 'signIn' on='submit'}}>
+    <div class="row">
+      <div class="six columns">
+        <label for="emailInput">Your email</label>
+        {{input value=email class="u-full-width" type="email" placeholder="you@mail.com" id="emailInput"}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="six columns">
+        <label for="passwordInput">Your email</label>
+        {{input value=password class="u-full-width" type="password" placeholder="********" id="passwordInput"}}
+      </div>
+    </div>
+
+    {{input class="button-primary" type="submit" value="Login"}}
+  </form>
+  {{#if errorMsg}}
+    <p>{{errorMsg}}</p>
+  {{/if}}
+
+  <h1>OR</h1>
+  <button {{action "signInWithProvider" "facebook"}}>Sign in with Facebook</button>
+</div>
