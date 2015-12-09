@@ -7,6 +7,9 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('login');
+  this.route('chat');
+  this.route('logout');
+  this.route('registration');
 });
 
 export default Router;
