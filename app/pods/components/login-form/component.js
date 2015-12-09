@@ -5,21 +5,21 @@ export default Ember.Component.extend({
 
   actions: {
     signIn(){
-      this.get("session").open("firebase", {
+      this.get('session').authenticate('authenticator:firebase-simple-auth','firebase-simple-auth', {
           provider: 'password',
           email: this.get('email'),
           password: this.get('password')
-      }).then(data => {
-        console.log(data.currentUser);
       }).catch(err => {
         this.set('errorMsg', err.message);
       });
     },
 
     signInWithProvider(provider) {
-      this.get("session").open("firebase", {provider}).then(data => {
-        console.log(data.currentUser);
-      });
+      this.get('session').authenticate(
+        'authenticator:firebase-simple-auth',
+        'firebase-simple-auth',
+        {provider}
+      );
     },
 
     signOut() {

@@ -5,13 +5,22 @@ module.exports = function(environment) {
     modulePrefix: 'ember-chat',
     podModulePrefix: 'ember-chat/pods',
     environment: environment,
-    firebase: 'https://kewl-chat.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     //auth
+    firebase: 'https://kewl-chat.firebaseio.com/',
     torii: {
-      sessionServiceName: 'session'
+      sessionServiceName: 'session',
+      providers: {
+        'firebase-simple-auth': {}
+      }
     },
+
+    'ember-simple-auth': {
+      authenticationRoute: 'login',
+      routeAfterAuthentication: 'chat'
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -26,12 +35,12 @@ module.exports = function(environment) {
 
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' https://cdn.mxpnl.com", // Allow scripts from https://cdn.mxpnl.com
-      'font-src': "'self' http://fonts.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
-      'connect-src': "'self' https://api.mixpanel.com http://custom-api.local https://auth.firebase.com wss://*.firebaseio.com", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
-      'img-src': "'self'",
-      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com
-      'media-src': "'self'"
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' use.typekit.net connect.facebook.net maps.googleapis.com maps.gstatic.com https://*.firebaseio.com",
+      'font-src': "'self' fonts.gstatic.com",
+      'connect-src': "'self' wss://*.firebaseio.com auth.firebase.com",
+      'img-src': "'self' www.facebook.com p.typekit.net",
+      'style-src': "'self' 'unsafe-inline' use.typekit.net https://fonts.googleapis.com storage.googleapis.com",
+      'frame-src': "s-static.ak.facebook.com static.ak.facebook.com www.facebook.com https://*.firebaseio.com"
     }
   };
 
