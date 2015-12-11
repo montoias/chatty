@@ -1,0 +1,18 @@
+<div class="chat">
+  <div class="recents">
+    {{#power-select
+      options=model.users
+      onchange=(action model.actions.createConversation)
+      placeholder="Talk with a friend"
+      as |user|}}
+      {{user.email}}
+    {{/power-select}}
+
+    {{#each model.user.conversations as |conversation|}}
+      {{#link-to 'chats.chat' conversation}}Title{{/link-to}}
+      <p>{{conversation}}</p>
+    {{/each}}
+  </div>
+
+  {{outlet}}
+</div>

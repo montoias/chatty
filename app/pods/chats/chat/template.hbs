@@ -1,0 +1,10 @@
+<div class="conversation">
+  <div class="messages">
+    {{display-messages messages=model.messages}}
+  </div>
+  <div class="send-message">
+    {{send-message sendMessage='sendMessage' message=model.message}}
+  </div>
+</div>
+
+{{outlet}}

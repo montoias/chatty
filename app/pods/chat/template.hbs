@@ -1,9 +1,0 @@
-<h1>This is a chat</h1>
-
-{{log model.messages}}
-
-{{#link-to 'logout'}}Logout{{/link-to}}
-
-{{display-messages messages=model.messages}}
-
-{{send-message sendMessage=(action model.actions.sendMessage)}}
