@@ -1,7 +1,7 @@
 <div class="container">
-  <h1>Login</h1>
+  <h1>{{title}}</h1>
 
-  <form {{action 'signIn' on='submit'}}>
+  <form {{action actionName on="submit"}}>
     <div class="row">
       <div class="six columns">
         <label for="emailInput">Your email</label>
@@ -16,11 +16,10 @@
       </div>
     </div>
 
-    {{input class="button-primary" type="submit" value="Login"}}
+    {{yield}}
+
+    {{#if errorMsg}}<p>{{errorMsg}}</p>{{/if}}
   </form>
-  {{#if errorMsg}}
-    <p>{{errorMsg}}</p>
-  {{/if}}
 
   <h1>OR</h1>
   <button {{action "signInWithProvider" "facebook"}}>Sign in with Facebook</button>

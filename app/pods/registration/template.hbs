@@ -1,3 +1,7 @@
-Registration
+{{#login-form title='Registration' actionName='signUp'}}
+  <button type='submit' class='button-primary'>Register</button>
+
+  {{#link-to 'login'}}Already registered? Login now.{{/link-to}}
+{{/login-form}}
 
 {{outlet}}

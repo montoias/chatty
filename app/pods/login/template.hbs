@@ -1,5 +1,7 @@
-{{login-form}}
+{{#login-form title='Login' actionName='signIn'}}
+  <button type='submit' class='button-primary' >Login</button>
 
-{{#link-to 'registration'}}Registration{{/link-to}}
+  {{#link-to 'registration'}}Not registered? Register now.{{/link-to}}
+{{/login-form}}
 
 {{outlet}}
