@@ -7,9 +7,11 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('login');
-  this.route('chat');
   this.route('logout');
   this.route('registration');
+  this.route('chats', function() {
+    this.route('chat', {path: '/:chat_id'});
+  });
 });
 
 export default Router;
