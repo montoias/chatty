@@ -9,8 +9,11 @@
     {{/power-select}}
 
     {{#each model.user.conversations as |conversation|}}
-      {{#link-to 'chats.chat' conversation}}Title{{/link-to}}
-      <p>{{conversation}}</p>
+      {{#link-to 'chats.chat' conversation}}
+        {{#each conversation.users as |user|}}
+          <p>{{user.email}}</p>
+        {{/each}}
+      {{/link-to}}
     {{/each}}
   </div>
 

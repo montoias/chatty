@@ -42,6 +42,10 @@
     "ember-simple-auth": "1.0.1",
     "ember-simple-auth-firebase": "0.0.3",
     "emberfire": "1.6.2",
+    "moment": "^2.10.6",
     "torii": "0.6.1"
+  },
+  "dependencies": {
+    "ember-browserify": "^1.1.4"
   }
 }

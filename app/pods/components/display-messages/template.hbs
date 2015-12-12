@@ -3,8 +3,9 @@
   <tbody>
     {{#each messages as |message|}}
       <tr>
-        <td>User 1</td>
-        <td>{{message.message}}</td>
+        <td>{{message.user.email}}</td>
+        <td>{{message.body}}</td>
+        <td>{{message.timestamp}}</td>
       </tr>
     {{/each}}
   </tbody>
